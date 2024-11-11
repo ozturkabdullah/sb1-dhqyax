@@ -1,0 +1,37 @@
+/* Mevcut CSS'e eklenecek */
+
+/* Lazy loading için blur-up efekti */
+.blur-up-fade {
+    filter: blur(5px);
+    transition: filter 0.3s ease-out;
+}
+
+img.loaded + .blur-up-fade {
+    filter: blur(0);
+    opacity: 0;
+}
+
+/* Aspect ratio container */
+.aspect-w-16 {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+}
+
+.aspect-w-4 {
+    position: relative;
+    padding-bottom: 75%; /* 4:3 */
+}
+
+.aspect-w-1 {
+    position: relative;
+    padding-bottom: 100%; /* 1:1 */
+}
+
+[class^="aspect-"] img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
